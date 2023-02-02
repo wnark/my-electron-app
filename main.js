@@ -1,4 +1,10 @@
 // 主进程
+
+// 将环境变量加载到我们的代码，在程序中尽早添加 dotenv.config() 这一行，以确保所有代码都可以访问你的变量。
+// process.env 现在具有在 .env 文件中定义的键和值。
+const dotenv = require("dotenv")
+dotenv.config()
+
 // electron 模块可以用来控制应用的生命周期和创建原生流量窗口
 // app，它控制您的应用的事件生命周期。
 // BrowserWindow，它负责创建和管理应用的窗口。

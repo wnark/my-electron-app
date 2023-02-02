@@ -4,7 +4,10 @@ module.exports = {
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
-      config: {},
+      config: {
+        certificateFile: process.env.CERTIFICATE_PRIVATE_KEY,
+        certificatePassword: process.env.CERTIFICATE_PASSWORD
+      },
     },
     {
       name: '@electron-forge/maker-zip',
@@ -17,6 +20,19 @@ module.exports = {
     {
       name: '@electron-forge/maker-rpm',
       config: {},
+    },
+  ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'wnark',
+          name: 'wnark',
+        },
+        prerelease: false,
+        draft: true,
+      },
     },
   ],
 };
