@@ -35,7 +35,7 @@ const createWindow = () => {
     mainWindow.loadFile('index.html')
 
     // 打开开发工具
-    mainWindow.webContents.openDevTools()
+    // mainWindow.webContents.openDevTools()
   }
 
   // 这段程序将会在Electron结束初始化
